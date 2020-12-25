@@ -15,6 +15,9 @@ class _UpperPartState extends State<UpperPart> {
     'https://images-na.ssl-images-amazon.com/images/I/31mNRbVf2AL.jpg',
     'https://images-na.ssl-images-amazon.com/images/I/717LhMH5CbL._UL1500_.jpg',
     'https://images-na.ssl-images-amazon.com/images/I/91JTuwVaGOL._UL1500_.jpg',
+    'https://images-na.ssl-images-amazon.com/images/I/31mNRbVf2AL.jpg',
+    'https://images-na.ssl-images-amazon.com/images/I/717LhMH5CbL._UL1500_.jpg',
+    'https://images-na.ssl-images-amazon.com/images/I/91JTuwVaGOL._UL1500_.jpg',
   ];
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
@@ -41,12 +44,7 @@ class _UpperPartState extends State<UpperPart> {
                    _current = index;
                  });
                },
-                items: [
-                  'https://images-na.ssl-images-amazon.com/images/I/31mNRbVf2AL.jpg',
-                  'https://images-na.ssl-images-amazon.com/images/I/717LhMH5CbL._UL1500_.jpg',
-                  'https://images-na.ssl-images-amazon.com/images/I/91JTuwVaGOL._UL1500_.jpg',
-                  'https://images-na.ssl-images-amazon.com/images/I/717LhMH5CbL._UL1500_.jpg',
-                ].map((i) {
+                items: imgList.map((i) {
                   return Builder(
                     builder: (BuildContext context) {
                       return Container(
@@ -139,19 +137,17 @@ class _UpperPartState extends State<UpperPart> {
                 ),
               ),
               ////////////////////////////////////////////////////////////////////////////
+              Padding(
+                padding: const EdgeInsets.only(bottom: 15,right: 15),
+                child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: Icon(Icons.bookmark_border,size: 28,)),
+              )
 
             ]
         ),
       ),
     );
   }
-  goToPrevious() {
-    carouselSlider.previousPage(
-        duration: Duration(milliseconds: 300), curve: Curves.ease);
-  }
 
-  goToNext() {
-    carouselSlider.nextPage(
-        duration: Duration(milliseconds: 300), curve: Curves.decelerate);
-  }
 }
