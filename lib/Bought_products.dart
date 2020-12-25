@@ -77,20 +77,20 @@ class _ProductState extends State<Product> {
                 ),
                 width: 40,
                 height: selected ? 120 : 50,
-                duration: Duration(milliseconds: 1),
+                duration: Duration(milliseconds: 0),
                 curve: Curves.fastOutSlowIn,
                 child: selected ? Column( children: <Widget>[
                   SizedBox(height: 10,),
                   GestureDetector(
-                    onTap: ()=>setState(()=>_itemCount--),
+                    onTap: ()=>setState(()=>_itemCount=_itemCount-1),
                       child: Icon(Icons.remove,color: Colors.white,)),
                   SizedBox(height: 17,),
                   Text(_itemCount.toString(),style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                   SizedBox(height: 17,),
                   GestureDetector(
-                    onTap: ()=>setState(()=>_itemCount++),
+                    onTap: ()=>setState(()=>_itemCount=_itemCount+1),
                       child: GestureDetector(
-                          onTap: ()=>setState(()=>_itemCount++),
+                          onTap: ()=>setState(()=>_itemCount=_itemCount+1),
                           child: Icon(Icons.add,color: Colors.white,))),
 
                 ],

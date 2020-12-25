@@ -15,6 +15,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0-nullsafety.1"
+  carousel_pro:
+    dependency: "direct main"
+    description:
+      name: carousel_pro
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.1"
   characters:
     dependency: transitive
     description:
@@ -88,13 +102,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0-nullsafety.1"
-  persistent_bottom_nav_bar:
-    dependency: "direct main"
-    description:
-      name: persistent_bottom_nav_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.1.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -158,3 +165,4 @@ packages:
     version: "2.1.0-nullsafety.3"
 sdks:
   dart: ">=2.10.0-110 <2.11.0"
+  flutter: ">=1.2.0 <2.0.0"

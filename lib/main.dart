@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:starfx/mainscreen.dart';
+import 'package:starfx/product_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
 
       ),
-      home: MainScreen(),
+      home: ProductDetail(),
     );
 
   }
