@@ -8,6 +8,7 @@ import 'Bought_products.dart';
 
 
 class MainScreen extends StatefulWidget {
+  int count = 0;
   @override
   _MainScreenState createState() => _MainScreenState();
 }

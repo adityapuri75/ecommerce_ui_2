@@ -8,12 +8,15 @@ class Product extends StatefulWidget {
 
   Product({this.imagePath,this.name,this.price});
 
+
   @override
   _ProductState createState() => _ProductState();
 }
 
 class _ProductState extends State<Product> {
+  int _itemCount = 0;
   AnimationController _controller;
+
 
 
 
@@ -24,8 +27,10 @@ class _ProductState extends State<Product> {
   }
 
   bool selected = false;
+  // int count = 0;
   @override
   Widget build(BuildContext context) {
+    int count = 0;
     return Container(
       child: Stack(
         children: <Widget>[
@@ -55,7 +60,12 @@ class _ProductState extends State<Product> {
             child: GestureDetector(
               onTap: () {
                 setState(() {
-                  selected = ! selected;
+                  selected = true;
+                });
+              },
+              onDoubleTap: (){
+                setState(() {
+                  selected = false;
                 });
               },
               child: AnimatedContainer(
@@ -72,15 +82,16 @@ class _ProductState extends State<Product> {
                 child: selected ? Column( children: <Widget>[
                   SizedBox(height: 10,),
                   GestureDetector(
-                    onTap: (){
-                    },
+                    onTap: ()=>setState(()=>_itemCount--),
                       child: Icon(Icons.remove,color: Colors.white,)),
                   SizedBox(height: 17,),
-                  Text("01",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                  Text(_itemCount.toString(),style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                   SizedBox(height: 17,),
                   GestureDetector(
-                    onTap: (){},
-                      child: Icon(Icons.add,color: Colors.white,)),
+                    onTap: ()=>setState(()=>_itemCount++),
+                      child: GestureDetector(
+                          onTap: ()=>setState(()=>_itemCount++),
+                          child: Icon(Icons.add,color: Colors.white,))),
 
                 ],
 
