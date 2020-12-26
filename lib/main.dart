@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.white,
 
       ),
-      home: ProductDetail(),
+      home: MainScreen(),
     );
 
   }

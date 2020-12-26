@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 
 import 'package:starfx/product_data.dart';
+import 'package:starfx/product_page.dart';
 
 import 'Bought_products.dart';
 
@@ -51,30 +52,30 @@ class _MainScreenState extends State<MainScreen> {
                     child: Text(
                       "New arrivals",
                       style: TextStyle(
-                          fontSize: 12, fontWeight: FontWeight.bold),
+                          fontSize: 12, fontWeight: FontWeight.bold,color: Colors.black),
                     ),
                   ),
                   new Tab(
                     child: Text(
-                      "New arrivals",
+                      "Clothes",
                       style: TextStyle(fontSize: 10),
                     ),
                   ),
                   new Tab(
                     child: Text(
-                      "New arrivals",
+                      "Shoes",
                       style: TextStyle(fontSize: 10),
                     ),
                   ),
                   Tab(
                     child: Text(
-                      "New arrivals",
+                      "Handbags",
                       style: TextStyle(fontSize: 10),
                     ),
                   ),
                   Tab(
                     child: Text(
-                      "New arrivals",
+                      "Trends",
                       style: TextStyle(fontSize: 10),
                     ),
                   ),
@@ -145,8 +146,13 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   Widget _boughtProducts(Products products) {
-    return Container(
-      child: Product(name: products.name,price: products.price,imagePath: products.imagePath,),
+    return GestureDetector(
+      onTap: (){
+        Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetail()));
+      },
+      child: Container(
+        child: Product(name: products.name,price: products.price,imagePath: products.imagePath,),
+      ),
     );
   }
 }
